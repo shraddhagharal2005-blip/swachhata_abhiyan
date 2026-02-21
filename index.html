@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>स्वच्छता अभियान - सामाजिक सुधारणा</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF9500;
+            --secondary: #2E7D32;
+            --accent: #1565C0;
+            --dark: #1a1a1a;
+            --light: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            border-bottom-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            animation: slideDown 0.8s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sant Gadge Maharaj Image in Hero */
+        .hero-gadge-image {
+            display: flex;
+            justify-content: center;
+            margin: 2rem auto 1rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-gadge-image svg {
+            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.5);
+        }
+
+        .hero-gadge-caption {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            margin-top: 0.5rem;
+            font-style: italic;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Image Gallery */
+        .image-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .image-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            height: 250px;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: var(--white);
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Featured Section */
+        .featured {
+            background: linear-gradient(135deg, #fff3e0 0%, #e8f5e9 100%);
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .featured h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Yojana Details */
+        .yojana-box {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 5px solid var(--accent);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .yojana-box h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .objective-item {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .objective-item h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Statistics */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--secondary);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            text-align: right;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-left: 3rem;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border: 4px solid var(--light);
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 1.5rem;
+            z-index: 2;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                width: 100%;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                margin: 0;
+                padding-left: 3rem;
+                text-align: left;
+            }
+
+            .timeline-dot {
+                left: 0;
+            }
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Highlights */
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .highlight-green {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                🧹 स्वच्छता अभियान
+            </div>
+            <ul>
+                <li><a href="#home">मुख्य</a></li>
+                <li><a href="#gadage">संत गाडगे महाराज</a></li>
+                <li><a href="#yojana">योजना</a></li>
+                <li><a href="#events">कार्यक्रम</a></li>
+                <li><a href="#impact">प्रभाव</a></li>
+                <li><a href="#contact">संपर्क</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>स्वच्छता अभियान - सामाजिक सुधारणा</h1>
+        <p>राष्ट्रीय स्तरावर स्वच्छता आणि स्वास्थ्य संबंधी जागरूकता</p>
+
+        <!-- Sant Gadge Maharaj Image Box -->
+        <div class="hero-gadge-image">
+            <div style="width:200px; height:200px; border-radius:50%; border:5px solid rgba(255,255,255,0.6); overflow:hidden;">
+                <img src="data:image/jpeg;base64,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" style="width:100%; height:100%; object-fit:cover;"/>
+            </div>
+        </div>
+        <div class="hero-gadge-caption">संत गाडगे महाराज (१८७६ - १९५६) - स्वच्छतेचे अग्रदूत</div>
+
+        <p style="font-size: 1rem; margin-top: 1.5rem;">भारतीय समाजात स्वच्छता हा एक महत्त्वाचा घटक आहे। स्वच्छता अभियान हा एक सामाजिक आंदोलन आहे जो देशभर मानवी मूल्यांचे संरक्षण आणि विकास करतो।</p>
+    </section>
+
+    <!-- Overview Section -->
+    <section>
+        <h2>स्वच्छता अभियान - परिचय</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">🏥</div>
+                <h3>स्वास्थ्य सुधार</h3>
+                <p>स्वच्छ वातावरणामुळे विविध रोगांचा प्रसार रोखला जातो. स्वच्छता आणि स्वच्छ जलापुरवठा यामुळे लोकांचा आरोग्य सुधारत आहे.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h3>पर्यावरण संरक्षण</h3>
+                <p>स्वच्छता अभियान पर्यावरण संरक्षणाशी जोडलेला आहे. येथे जंगल, जलस्रोत आणि मातीचे संरक्षण केले जाते.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>जागरूकता</h3>
+                <p>स्वच्छतेचे महत्त्व समजवून मानुष्यांमध्ये जागरूकता निर्माण केली जाते. शिक्षा, कार्यशाळा आणि प्रचार यामार्फत हे कार्य केले जाते.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sant Gadge Maharaj Section -->
+    <section id="gadage">
+        <h2>संत गाडगे महाराज - स्वच्छतेचे अग्रदूत</h2>
+        
+        <div class="featured">
+            <h3>🙏 संत गाडगे महाराज यांचा जीवन परिचय</h3>
+            <p style="margin-bottom: 1rem;">
+                <span class="highlight">संत गाडगे महाराज</span> संत गाडगे महाराज (२३ फेब्रुवारी १८७६ - २० डिसेंबर १९५६) हे महाराष्ट्रातील एक थोर समाजसुधारक, कीर्तनकार आणि संत होते, ज्यांनी आयुष्यभर स्वच्छता, शिक्षण आणि माणुसकीचा प्रसार केला.गाडगे महाराजांचा जन्म अमरावती जिल्ह्यातील शेंडगाव येथे झाला.त्यांनी मंदिरात जाऊन मूर्तीची पूजा करण्यापेक्षा माणसांची सेवा करण्याला महत्त्व दिले.
+            </p>
+            <p>
+                त्यांचे मुख्य योगदान स्वच्छतेचे प्रचार, छूतपातीसंबंधी कुरीती नष्ट करणे आणि सामाजिक समरसतेसाठी होते.गाडगे महाराज यांनी स्वच्छता आणि स्वास्थ्य विषयी लोकांचे मार्गदर्शन केले.
+            </p>
+        </div>
+
+        <h3 style="color: var(--secondary); text-align: center; margin-top: 2rem;">संत गाडगे महाराज यांचे प्रमुख योगदान</h3>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">🧹</div>
+                <h3>स्वच्छता प्रचार</h3>
+                <p>संत गाडगे महाराज यांनी गावागावात फिरून स्वच्छता आणि शुद्धतेचा प्रचार केला. त्यांनी स्वतः झाडू घेऊन रस्ते साफ करण्याचे काम केले.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h3>सामाजिक समरसता</h3>
+                <p>त्यांनी सर्व जातिमतांच्या लोकांसाठी समान व्यवहार केला. छूतपातीच्या विरोधात वोट दिली आणि समाज एकत्र करण्याचा प्रयत्न केला.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">❤️</div>
+                <h3>समाजसेवा</h3>
+                <p>संत गाडगे महाराज यांनी आपले संपूर्ण जीवन समाजसेवेला समर्पित केले. गरीब, रोगी आणि वंचित लोकांची सेवा करणे हा त्यांचा मुख्य उद्देश होता.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌱</div>
+                <h3>पर्यावरण प्रेम</h3>
+                <p>त्यांनी जंगल आणि प्रकृतीचे संरक्षण केले. वृक्षरोपण आणि पर्यावरण शुद्धतेचा महत्त्व लोकांना समजवले.</p>
+            </div>
+        </div>
+
+        <div style="background: #fff3e0; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
+            <h4 style="color: var(--primary); margin-bottom: 1rem;">📖 संत गाडगे महाराज यांचे विचार</h4>
+            <p style="font-style: italic; color: var(--dark);">
+                "स्वच्छता ईश्वराचा दिव्य उपहार आहे. स्वच्छ घर, स्वच्छ गाव, स्वच्छ समाज - हे सर्व सुखाचे मूळ आहे. प्रत्येक मनुष्याने स्वच्छतेचा पालन करणे हा अपरिहार्य कर्तव्य आहे."
+            </p>
+        </div>
+    </section>
+
+    <!-- Swachh Bharat Yojana Section -->
+    <section id="yojana">
+        <h2>स्वच्छ भारत सुंदर भारत योजना</h2>
+
+        <div class="yojana-box">
+            <h3>योजनेचा विस्तृत परिचय</h3>
+            <p>
+                <span class="highlight-green">स्वच्छ भारत सुंदर भारत योजना</span> (Swachh Bharat Mission) भारत सरकारद्वारे २०१४ साली सुरू केली गेली. या योजनेचा मुख्य उद्देश देशभर स्वच्छता आणि स्वच्छ सुविधांचा प्रसार करणे हा आहे.
+            </p>
+            <p style="margin-top: 1rem;">
+                हा योजना दोन मुख्य घटकांमध्ये विभागला गेला आहे:
+            </p>
+            <ul style="margin-top: 1rem; margin-left: 2rem;">
+                <li><strong>स्वच्छ भारत अभियान (नगरीय)</strong> - शहरातील स्वच्छता</li>
+                <li><strong>स्वच्छ भारत अभियान (ग्रामीण)</strong> - गावातील स्वच्छता</li>
+            </ul>
+        </div>
+
+        <h3 style="text-align: center; color: var(--accent); margin: 2rem 0;">योजनेचे मुख्य उद्देश</h3>
+        
+        <div class="objectives">
+            <div class="objective-item">
+                <h4>🚽 सार्वजनिक शौचालय निर्माण</h4>
+                <p>सर्व गावांमध्ये आणि शहरांमध्ये पर्याप्त शौचालय सुविधांचा विस्तार करणे.</p>
+            </div>
+            <div class="objective-item">
+                <h4>💧 स्वच्छ जलापुरवठा</h4>
+                <p>सर्वांसाठी स्वच्छ, सुरक्षित आणि पुरेसा जलापुरवठा सुनिश्चित करणे.</p>
+            </div>
+            <div class="objective-item">
+                <h4>♻️ कचरा व्यवस्थापन</h4>
+                <p>घरेलू आणि औद्योगिक कचऱ्याचे योग्य व्यवस्थापन करणे.</p>
+            </div>
+            <div class="objective-item">
+                <h4>📢 जागरूकता प्रचार</h4>
+                <p>स्वच्छता आणि स्वास्थ्य विषयी लोकांमध्ये जागरूकता निर्माण करणे.</p>
+            </div>
+            <div class="objective-item">
+                <h4>🏗️ कचरा उपचार संयंत्र</h4>
+                <p>अत्याधुनिक कचरा उपचार संयंत्रांचा निर्माण आणि संचालन करणे.</p>
+            </div>
+            <div class="objective-item">
+                <h4>👨‍👩‍👧‍👦 पारिवारिक स्वच्छता</h4>
+                <p>प्रत्येक घरात स्वच्छता आणि व्यक्तिगत स्वच्छतेची अभ्यास गढ वलणे.</p>
+            </div>
+        </div>
+
+        <div class="yojana-box">
+            <h3>योजनेचे मुख्य बदल आणि प्रगती</h3>
+            <div style="margin-top: 1.5rem;">
+                <p><strong>२०१४ पूर्वी:</strong> देशमध्ये खुल्या मैदानांमध्ये शौचाची समस्या होती. अधिकाांश ग्रामीण भागांमध्ये शौचालयांचा अभाव होता.</p>
+                <p style="margin-top: 1rem;"><strong>२०१४-२०१९ साल:</strong> योजनेचे पहिले टप्पे पूर्ण झाले. ग्रामीण भागांमध्ये करोडो शौचालय बांधणे झाले. खुल्या मैदानांमध्ये शौचाचा प्रमाण कमी झाला.</p>
+                <p style="margin-top: 1rem;"><strong>२०१९ नंतर:</strong> स्वच्छ भारत अभियान २.० सुरू झाली. योजनेचे लक्ष्य पुन्हा निर्धारित केली गेली. अब कचरा व्यवस्थापन आणि फेकाफेकी (Open Defecation) मुक्त भारत हे मुख्य ध्येय आहे.</p>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; color: var(--secondary); margin: 2rem 0;">योजनेचे प्रभावशाली परिणाम</h3>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">11 करोड+</div>
+                <div class="stat-label">शौचालय बांधणे झाले</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">ग्रामीण भागात ODF सुविधा</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5 लाख+</div>
+                <div class="stat-label">कचरा संग्रहकर्ता नियुक्त</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">₹55,000 करोड</div>
+                <div class="stat-label">एकूण गुंतवणूक</div>
+            </div>
+        </div>
+
+        <div class="yojana-box">
+            <h3>योजनेचे मुख्य अवयव</h3>
+            <p style="margin-top: 1rem;">
+                <strong>१. नगरीय स्वच्छ भारत अभियान (SVACHH BHARAT MISSION - URBAN):</strong> 
+                शहरांमध्ये कचरा व्यवस्थापन, सार्वजनिक शौचालय आणि सफाई कर्मचारियांचे प्रशिक्षण.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>२. ग्रामीण स्वच्छ भारत अभियान (SWACHH BHARAT MISSION - RURAL):</strong> 
+                गावांमध्ये शौचालय निर्माण, खुल्या मैदानांमध्ये शौचाचे उच्छेद, पेयजल सुविधा.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>३. स्वच्छ भारत अभियान २.० (SWACHH BHARAT 2.0):</strong> 
+                कचऱ्याचे संपूर्ण सर्किकुलर इकॉनमी, मलप्रवाहाची व्यवस्था, पर्यावरण संरक्षण.
+            </p>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact">
+        <h2>स्वच्छता अभियानचे प्रभाव - सफलता कथा</h2>
+        
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">💚</div>
+                <h3>आरोग्य सुधार</h3>
+                <p>स्वच्छता अभियानामुळे जलजन्य रोग, डायरिया आणि इतर संक्रामक रोगांचा प्रसार कमी झाला. बालमृत्यूचे दर घटले आहे.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">🏘️</div>
+                <h3>गावांचा विकास</h3>
+                <p>स्वच्छ गावांमध्ये पर्यटन वाढत आहे. गावातील अर्थव्यवस्था सुधारत आहे. रस्ते आणि सार्वजनिक ठिकाणे सुंदर झाले आहेत.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌳</div>
+                <h3>पर्यावरण संरक्षण</h3>
+                <p>स्वच्छ वातावरण मुळे प्रकृतीचे नुकसान कमी झाले आहे. जलस्रोत स्वच्छ राहू लागले आहेत. हरीत संपदा वाढत आहे.</p>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; color: var(--secondary); margin: 3rem 0;">प्रेरणादायक घटना आणि सफलता</h3>
+        
+        <div style="background: var(--white); padding: 2rem; border-radius: 8px; margin: 2rem 0; border-left: 5px solid var(--secondary);">
+            <h4 style="color: var(--secondary); margin-bottom: 1rem;">🏆 अंतर्राष्ट्रीय स्वीकृती</h4>
+            <p>
+                स्वच्छ भारत अभियान संयुक्त राष्ट्रांनी मान्यता दिली आहे. ही योजना विश्वपातळीवर सर्वात मोठी शौचालय निर्माण योजना मानली जाते. भारतीय सरकारचे स्वच्छता अभियान UN Sustainable Development Goals सोबत संरेखित आहे.
+            </p>
+        </div>
+
+        <div style="background: var(--white); padding: 2rem; border-radius: 8px; margin: 2rem 0; border-left: 5px solid var(--primary);">
+            <h4 style="color: var(--primary); margin-bottom: 1rem;">📱 डिजिटल स्वच्छता - नवीन पहल</h4>
+            <p>
+                आजकाल स्वच्छता अभियान डिजिटल माध्यमांद्वारे लोकांपर्यंत पोचत आहे. सोशल मीडिया, WhatsApp, YouTube आणि अन्य डिजिटल प्लेटफॉर्मवर स्वच्छतेबाबत जागरूकता प्रचार केला जाता आहे. मोबाइल अ‍ॅप्लिकेशन्सद्वारे नागरिक शिकायती दाखल करू शकतात आणि स्वच्छता कार्यक्रमांचा अनुसरण करू शकतात.
+            </p>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section>
+        <h2>स्वच्छता अभियान - दृश्य</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">स्वच्छता अभियानचे विविध पहलू आणि कार्यक्रम</p>
+        
+        <div class="image-section">
+            <div class="image-item">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="300" fill="url(#grad1)"/>
+                    <circle cx="200" cy="80" r="40" fill="#FFD700"/>
+                    <rect x="50" y="180" width="100" height="80" fill="#8B4513"/>
+                    <polygon points="100,120 50,180 150,180" fill="#228B22"/>
+                    <rect x="250" y="180" width="100" height="80" fill="#8B4513"/>
+                    <polygon points="300,120 250,180 350,180" fill="#228B22"/>
+                    <text x="200" y="270" font-size="24" text-anchor="middle" fill="#2E7D32" font-weight="bold">स्वच्छ गाव</text>
+                </svg>
+                <div class="image-caption">स्वच्छ गाव - सुंदर भारत</div>
+            </div>
+            <div class="image-item">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+                    <rect width="400" height="300" fill="#f0f0f0"/>
+                    <rect x="80" y="100" width="240" height="150" fill="#fff" stroke="#333" stroke-width="2"/>
+                    <rect x="100" y="120" width="60" height="60" fill="#FF9500"/>
+                    <rect x="240" y="120" width="60" height="60" fill="#FF9500"/>
+                    <circle cx="170" cy="200" r="8" fill="#666"/>
+                    <circle cx="230" cy="200" r="8" fill="#666"/>
+                    <rect x="150" y="140" width="100" height="80" fill="none" stroke="#2E7D32" stroke-width="2"/>
+                    <text x="200" y="270" font-size="20" text-anchor="middle" fill="#FF9500" font-weight="bold">शौचालय सुविधा</text>
+                </svg>
+                <div class="image-caption">आधुनिक शौचालय व्यवस्था</div>
+            </div>
+            <div class="image-item">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+                    <rect width="400" height="300" fill="#E8F5E9"/>
+                    <circle cx="100" cy="100" r="30" fill="#228B22"/>
+                    <circle cx="300" cy="120" r="35" fill="#228B22"/>
+                    <circle cx="150" cy="200" r="25" fill="#228B22"/>
+                    <circle cx="280" cy="180" r="28" fill="#228B22"/>
+                    <line x1="100" y1="130" x2="100" y2="200" stroke="#8B4513" stroke-width="3"/>
+                    <line x1="300" y1="155" x2="300" y2="220" stroke="#8B4513" stroke-width="3"/>
+                    <text x="200" y="270" font-size="20" text-anchor="middle" fill="#2E7D32" font-weight="bold">वृक्षरोपण कार्यक्रम</text>
+                </svg>
+                <div class="image-caption">पर्यावरण संरक्षण</div>
+            </div>
+            <div class="image-item">
+                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+                    <rect width="400" height="300" fill="#FFF9E6"/>
+                    <circle cx="200" cy="150" r="80" fill="#FF9500"/>
+                    <text x="200" y="165" font-size="60" text-anchor="middle" fill="#fff" font-weight="bold">🧹</text>
+                    <rect x="50" y="220" width="100" height="50" fill="#2E7D32"/>
+                    <text x="100" y="255" font-size="18" text-anchor="middle" fill="#fff" font-weight="bold">कचरा संग्रह</text>
+                    <rect x="250" y="220" width="100" height="50" fill="#1565C0"/>
+                    <text x="300" y="255" font-size="16" text-anchor="middle" fill="#fff">अभिनिवेदन</text>
+                </svg>
+                <div class="image-caption">कचरा व्यवस्थापन योजना</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section>
+        <h2>स्वच्छता अभियानचा मुख्य काळक्रम</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4 style="color: var(--primary);">१८७६ - संत गाडगे महाराज यांचा जन्म</h4>
+                    <p>समाज सुधारक आणि स्वच्छता प्रचारक संत गाडगे महाराज यांचा जन्म झाला.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4 style="color: var(--secondary);">१९५६ - संत गाडगे महाराज यांचा निधन</h4>
+                    <p>संत गाडगे महाराज यांनी ८० वर्षांचे दीर्घ जीवन जगून समाज सेवा केली.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4 style="color: var(--primary);">२००२ - संत गाडगे महाराज स्मारक</h4>
+                    <p>अमरावती संत गाडगे महाराज यांच्या नावाचा स्मारक बांधण्यात आला.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4 style="color: var(--secondary);">२०१४ - स्वच्छ भारत अभियान सुरू</h4>
+                    <p>भारत सरकारने २ अक्टोबर २०१४ रोजी स्वच्छ भारत अभियान अधिकृतपणे सुरू केली.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4 style="color: var(--primary);">२०१९ - ५ साल आणि मोठी यशस्वी</h4>
+                    <p>योजनेचे पहिले पाच वर्ष पूर्ण झाले. ११ करोड शौचालय बांधणे झाले. भारत ODF (Open Defecation Free) घोषित केला गेला.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4 style="color: var(--secondary);">२०२० - स्वच्छ भारत अभियान २.०</h4>
+                    <p>नवीन अभियान सुरू केली गेली. लक्ष्य - कचऱ्याचे संपूर्ण व्यवस्थापन आणि मलप्रवाहाची सुविधा.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4 style="color: var(--primary);">२०२४-२०२६ - आजचे वर्तमान</h4>
+                    <p>स्वच्छता अभियान सर्व भारतभर सफलतेने चालू आहे. नगरीय आणि ग्रामीण भागांमध्ये स्वच्छता व्यवस्था सुधारत आहे.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Events Section -->
+    <section id="events">
+        <h2>सरकारी संस्थांद्वारे आयोजित स्वच्छता कार्यक्रम</h2>
+        
+        <div class="yojana-box">
+            <h3>🎯 सरकारचे महत्त्वाचे स्वच्छता कार्यक्रम</h3>
+            <p>
+                भारत सरकारने स्वच्छता अभियानच्या तहतशिवाय वर्षभर विविध कार्यक्रम आणि इव्हेंट्स आयोजित केली जातात. या कार्यक्रमांचा मुख्य उद्देश लोकांमध्ये स्वच्छतेचे मूल्य आणि महत्त्व समजवणे हा आहे.
+            </p>
+        </div>
+
+        <h3 style="text-align: center; color: var(--secondary); margin: 2rem 0;">वर्षभर आयोजित होणारे महत्त्वाचे कार्यक्रम</h3>
+
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">📅</div>
+                <h3>गांधी जयंती - २ ऑक्टोबर</h3>
+                <p><strong>महत्त्व:</strong> महात्मा गांधी यांचे जन्मदिवस. स्वच्छ भारत अभियान २ ऑक्टोबर २०१४ रोजी सुरू केली गेली होती.</p>
+                <p style="margin-top: 0.5rem;"><strong>कार्यक्रम:</strong> रस्ते साफ करणे, स्वच्छता मेळावे, प्रदर्शन, झाडू मार्च, सांस्कृतिक कार्यक्रम.</p>
+                <p style="margin-top: 0.5rem;"><strong>सहभाग:</strong> सरकारी अधिकारी, शिक्षक, विद्यार्थी, समाजसेवक यांच्या सक्रिय सहभागामी.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h3>विश्व स्वच्छता दिवस - २० सप्टेंबर</h3>
+                <p><strong>महत्त्व:</strong> संयुक्त राष्ट्रांचा आंतरराष्ट्रीय दिवस. विशेषतः स्वच्छ पाणी आणि शौचालय सुविधांवर लक्ष केंद्रित.</p>
+                <p style="margin-top: 0.5rem;"><strong>थीम:</strong> दरवर्षी भिन्न थीम असते (उदा. जलाचा महत्त्व, महिला सशक्तिकरण, आदि).</p>
+                <p style="margin-top: 0.5rem;"><strong>कार्यक्रम:</strong> सेमिनार, कार्यशाळा, सामग्रीचे वितरण, जनजागरण भाषण.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">♻️</div>
+                <h3>विश्व पर्यावरण दिवस - ५ जून</h3>
+                <p><strong>महत्त्व:</strong> पर्यावरण संरक्षण आणि स्वच्छता यांचे घनिष्ठ संबंध.</p>
+                <p style="margin-top: 0.5rem;"><strong>मुख्य कार्य:</strong> वृक्षरोपण मोहिम, कचऱ्याचे संपूर्ण व्यवस्थापन, प्लास्टिक मुक्त अभियान.</p>
+                <p style="margin-top: 0.5rem;"><strong>लक्ष्य:</strong> लाख लाख झाडे रोपणे, प्लास्टिक वापर कमी करणे, हरीत भारत निर्माण करणे.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💧</div>
+                <h3>जल संरक्षण दिवस</h3>
+                <p><strong>महत्त्व:</strong> स्वच्छ पाणीचे महत्त्व आणि संरक्षण.</p>
+                <p style="margin-top: 0.5rem;"><strong>कार्यक्रम:</strong> जलस्रोत साफ करणे, तालाब आणि नद्यांचे सुधार, जल संचय परियोजना.</p>
+                <p style="margin-top: 0.5rem;"><strong>संदेश:</strong> "जल ही जीवनची जड आहे - त्याचा संरक्षण करा."</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h3>स्वच्छता जनसमूह कार्यक्रम</h3>
+                <p><strong>उद्देश:</strong> महिनाभर सरकारी कर्मचारी आणि नागरिकांद्वारे स्वच्छता कार्य.</p>
+                <p style="margin-top: 0.5rem;"><strong>कार्य:</strong> रस्ते आणि सार्वजनिक ठिकाणे साफ करणे, कचरा संग्रहण, दीवालपत्रांचे साफसफाई.</p>
+                <p style="margin-top: 0.5rem;"><strong>प्रभाव:</strong> शहरांतर्गत आणि ग्रामीण भागांमध्ये दृश्यमान सुधार.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎓</div>
+                <h3>विद्यार्थी स्वच्छता अभियान</h3>
+                <p><strong>लक्ष्य:</strong> शाळा आणि महाविद्यालयांमध्ये स्वच्छता संस्कृती स्थापन करणे.</p>
+                <p style="margin-top: 0.5rem;"><strong>कार्यक्रम:</strong> स्वच्छता क्लब, शाळा परिसरे सफाई, स्वच्छता चित्रकला स्पर्धा, निबंध प्रतियोगिता.</p>
+                <p style="margin-top: 0.5rem;"><strong>पुरस्कार:</strong> सर्वोत्तम प्रदर्शन करणाऱ्या शाळा आणि विद्यार्थ्यांना सम्मान.</p>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; color: var(--primary); margin: 3rem 0;">महिने दर महिने होणारे मुख्य कार्यक्रम</h3>
+
+        <div class="featured" style="background: linear-gradient(135deg, #fff3e0 0%, #e8f5e9 100%);">
+            <h4 style="color: var(--primary); margin-bottom: 1rem;">📆 वार्षिक स्वच्छता कार्यक्रमांचा कॅलेंडर</h4>
+            
+            <div style="margin-top: 1.5rem;">
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #FF6B35; border-radius: 4px;">
+                    <strong style="color: #FF6B35;">जानेवारी:</strong> नववर्ष स्वच्छता अभियान - गावांतील रस्ते आणि सार्वजनिक स्थानांचे साफसफाई.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #FF9500; border-radius: 4px;">
+                    <strong style="color: #FF9500;">फेब्रुवारी:</strong> महिला स्वच्छता कार्यक्रम - महिलांचे स्वास्थ्य आणि व्यक्तिगत स्वच्छता विषयक जागरूकता.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #F57C00; border-radius: 4px;">
+                    <strong style="color: #F57C00;">मार्च:</strong> संविधान दिवस स्वच्छता मेळावा - नागरिक कर्तव्य आणि स्वच्छता.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #2E7D32; border-radius: 4px;">
+                    <strong style="color: #2E7D32;">एप्रिल:</strong> वसंत ऋतू स्वच्छता - बागवानी आणि पर्यावरण सफाई.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #1B5E20; border-radius: 4px;">
+                    <strong style="color: #1B5E20;">मे:</strong> ग्रीष्मकालीन स्वच्छता शिविर - बालकांना स्वच्छता शिक्षण.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #00897B; border-radius: 4px;">
+                    <strong style="color: #00897B;">जून:</strong> विश्व पर्यावरण दिवस - वृक्षरोपण आणि जल संरक्षण.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #0097A7; border-radius: 4px;">
+                    <strong style="color: #0097A7;">जुलै:</strong> मान्सून स्वच्छता - पाणी व्यवस्थापन आणि नाले साफसफाई.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #00838F; border-radius: 4px;">
+                    <strong style="color: #00838F;">ऑगस्ट:</strong> स्वतंत्रता दिवस स्वच्छता - राष्ट्रीय गर्व आणि स्वच्छता.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #1565C0; border-radius: 4px;">
+                    <strong style="color: #1565C0;">सप्टेंबर:</strong> शिक्षक दिवस - शाळामध्ये स्वच्छता कार्यक्रम.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #1A237E; border-radius: 4px;">
+                    <strong style="color: #1A237E;">ऑक्टोबर:</strong> गांधी जयंती - स्वच्छ भारत अभियान मुख्य कार्यक्रम.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #6A1B9A; border-radius: 4px;">
+                    <strong style="color: #6A1B9A;">नोव्हेंबर:</strong> विश्व स्वच्छता दिवस - जल आणि शौचालय सुविधांवर लक्ष.
+                </div>
+
+                <div style="background: white; padding: 1rem; margin: 0.5rem 0; border-left: 4px solid #455A64; border-radius: 4px;">
+                    <strong style="color: #455A64;">डिसेंबर:</strong> वर्षांत स्वच्छता - वार्षिक साराशन आणि पुरस्कार वितरण.
+                </div>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; color: var(--secondary); margin: 3rem 0;">प्रमुख स्वच्छता इव्हेंट्स आणि प्रतियोगिता</h3>
+
+        <div class="objectives">
+            <div class="objective-item">
+                <h4>🎨 स्वच्छता चित्रकला स्पर्धा</h4>
+                <p>शिक्षण संस्थांमध्ये राष्ट्रीय स्तरावर आयोजित. विद्यार्थ्यांना स्वच्छता विषयावर चित्र काढायचे. पुरस्कार आणि प्रमाणपत्र दिले जातात.</p>
+            </div>
+
+            <div class="objective-item">
+                <h4>✍️ स्वच्छता निबंध प्रतियोगिता</h4>
+                <p>महाविद्यालय आणि विद्यार्थ्यांसाठी वार्षिक निबंध स्पर्धा. स्वच्छता, पर्यावरण आणि सामाजिक दायित्वावर लेखन.</p>
+            </div>
+
+            <div class="objective-item">
+                <h4>🎤 स्वच्छता भाषण प्रतियोगिता</h4>
+                <p>शाळा, महाविद्यालय आणि सामाजिक संस्थांमध्ये. विद्यार्थ्यांना स्वच्छता विषयी सार्वजनिक भाषण देणे शिखवले जाते.</p>
+            </div>
+
+            <div class="objective-item">
+                <h4>🏆 स्वच्छतम शहर पुरस्कार</h4>
+                <p>राष्ट्रीय स्तरावर शहरांची तुलना. सर्वाधिक स्वच्छ शहरांना पुरस्कार आणि अनुदान दिले जाते.</p>
+            </div>
+
+            <div class="objective-item">
+                <h4>🌟 स्वच्छतम गाव पुरस्कार</h4>
+                <p>ग्रामीण भागांमध्ये स्वच्छता कार्याची स्पर्धा. सर्वोत्तम कार्य करणाऱ्या गावांना सन्मान आणि अनुदान.</p>
+            </div>
+
+            <div class="objective-item">
+                <h4>🎯 "क्लीन इंडिया" ड्राइव</h4>
+                <p>राष्ट्रीय राजमार्ग, रेलवे स्टेशन आणि बस स्टँडांचे पूर्ण सफाई कार्यक्रम. नियमित रखरखाव.</p>
+            </div>
+
+            <div class="objective-item">
+                <h4>🏥 आरोग्य शिविर</h4>
+                <p>स्वच्छता आणि आरोग्य विषयक नि:शुल्क शिविर. रोग निदान, टीकाकरण, स्वच्छता शिक्षा.</p>
+            </div>
+
+            <div class="objective-item">
+                <h4>💼 स्वच्छता कौशल्य प्रशिक्षण</h4>
+                <p>स्वच्छता कर्मचारियांना व्यावसायिक प्रशिक्षण. स्वच्छता व्यवस्थापन, सुरक्षा, तंत्रज्ञान शिक्षण.</p>
+            </div>
+        </div>
+
+        <div class="yojana-box" style="background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%); border-left-color: var(--accent);">
+            <h3 style="color: var(--accent);">🎊 स्वच्छता महोत्सव - विशेष कार्यक्रम</h3>
+            <p style="margin-top: 1rem;">
+                <strong>स्वच्छता महोत्सव</strong> हा एक वार्षिक मेगा इव्हेंट आहे जो संपूर्ण भारतभर आयोजित केला जातो.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>कार्यक्रमांचा समावेश:</strong>
+            </p>
+            <ul style="margin-top: 1rem; margin-left: 2rem; line-height: 1.8;">
+                <li>✓ झाडू मार्च आणि सड़क साफाई परेड</li>
+                <li>✓ सांस्कृतिक कार्यक्रम, नृत्य, संगीत</li>
+                <li>✓ नाटक आणि नुक्कड़ नाटय (जनजागरणासाठी)</li>
+                <li>✓ खेळ आणि क्रीड़ा स्पर्धा</li>
+                <li>✓ पर्यावरण प्रदर्शनी</li>
+                <li>✓ स्वच्छता उत्पादनांचे प्रदर्शन</li>
+                <li>✓ विद्यार्थ्यांसाठी पुरस्कार आणि सम्मान</li>
+                <li>✓ तांत्रिक कार्यशाळा आणि सेमिनार</li>
+            </ul>
+        </div>
+
+        <div class="yojana-box">
+            <h3>📱 डिजिटल स्वच्छता कार्यक्रम आणि ऍप्लिकेशन</h3>
+            <p style="margin-top: 1rem;">
+                आजकाल सरकार डिजिटल माध्यमांद्वारे स्वच्छता प्रचार करत आहे:
+            </p>
+            <ul style="margin-top: 1rem; margin-left: 2rem;">
+                <li><strong>SwachhMitra App:</strong> स्वच्छता कामगारांचे पंजीकरण आणि व्यवस्थापन</li>
+                <li><strong>SBM-G App:</strong> ग्रामीण स्वच्छता कार्यक्रमांचे ट्रॅकिंग</li>
+                <li><strong>SwachhataIndia Portal:</strong> स्वच्छता संबंधित सर्व माहिती एक ठिकाणी</li>
+                <li><strong>SBMUC Portal:</strong> नगरीय स्वच्छता प्रकल्पांचे व्यवस्थापन</li>
+                <li><strong>Social Media Campaigns:</strong> Twitter, Facebook, Instagram वर नियमित प्रचार</li>
+                <li><strong>YouTube Channels:</strong> शिक्षामूलक व्हिडिओ आणि प्रेरणादायक कथा</li>
+            </ul>
+        </div>
+
+        <h3 style="text-align: center; color: var(--primary); margin: 3rem 0;">सफलता कथा - वास्तविक उदाहरणे</h3>
+
+        <div class="card-container">
+            <div class="card" style="background: #e8f5e9;">
+                <div class="card-icon">🏘️</div>
+                <h3 style="color: var(--secondary);">गांधी नगर, महाराष्ट्र</h3>
+                <p>
+                    <strong>स्थिती पूर्वी:</strong> अव्यवस्थित गाव, कचरा पसरलेला.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>आज:</strong> भारतातील "स्वच्छतम गाव" पुरस्कार विजेता. संपूर्ण गाव स्वच्छ, पर्यटन स्थल बनला.
+                </p>
+            </div>
+
+            <div class="card" style="background: #fff3e0;">
+                <div class="card-icon">🏙️</div>
+                <h3 style="color: var(--primary);">इंदौर शहर</h3>
+                <p>
+                    <strong>उपलब्धी:</strong> सलग ६ वर्षे "स्वच्छतम शहर" पुरस्कार जिंकले.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>सुधार:</strong> पूर्ण कचरा व्यवस्थापन व्यवस्था, सक्षम नागरिक सहभाग, पर्यटन वाढला.
+                </p>
+            </div>
+
+            <div class="card" style="background: #e3f2fd;">
+                <div class="card-icon">🌾</div>
+                <h3 style="color: var(--accent);">तेलंगाना राज्य</h3>
+                <p>
+                    <strong>घोषणा:</strong> २०१८ मध्ये संपूर्ण ग्रामीण भाग ODF घोषित झाला.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    <strong>परिणाम:</strong> डायरिया आणि पेचेतून रोगांत ७५% कमी, बालमृत्यू दर घटला.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background: linear-gradient(135deg, #FF9500 0%, #2E7D32 100%); color: white; text-align: center;">
+        <h2 style="color: white;">आपणही स्वच्छता अभियानचा भाग व्हा!</h2>
+        <p style="margin: 1.5rem 0; font-size: 1.1rem;">
+            प्रत्येक नागरिकाचा कर्तव्य आहे देशला स्वच्छ ठेवणे. लहान प्रयत्नांमधून मोठे बदल येऊ शकतात.
+        </p>
+        <div style="margin-top: 2rem;">
+            <h3 style="color: white; margin-bottom: 1rem;">स्वच्छता अभियानात भाग घेण्यासाठी टिप्स:</h3>
+            <ul style="list-style: none; font-size: 1rem;">
+                <li>✓ आपल्या घर आणि आसपासला भाग स्वच्छ ठेवा</li>
+                <li>✓ कचरा सविस्तर वर्गीकरण करा (ड्राय आणि वेट)</li>
+                <li>✓ पिण्यासाठी स्वच्छ पाणी वापरा</li>
+                <li>✓ स्वच्छ हाताने अन्न तयार करा</li>
+                <li>✓ इतरांना स्वच्छतेचे महत्त्व समजवा</li>
+                <li>✓ ग्राम पंचायत आणि नगर निगमचे स्वच्छता कार्यक्रमांत सहभाग व्हा</li>
+            </ul>
+        </div>
+    </section>
+
+    <div style="background: #fff3e0; padding: 2rem; border-radius: 8px; margin-top: 2rem; text-align: center;">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">🎯 आमाचे विजन</h3>
+            <p style="font-size: 1.05rem; color: var(--dark);">
+                २०३० पर्यंत भारत एक पूर्णत: स्वच्छ, सुंदर आणि संपन्न राष्ट्र बनणे. प्रत्येक घरात आधुनिक शौचालय, स्वच्छ पाणी आणि सुव्यवस्थित कचरा व्यवस्थापन असणे. स्वच्छतेचे मूल्य समाजात सर्वत्र स्थापित होणे.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; २०२६ स्वच्छता अभियान - सामाजिक सुधारणा</p>
+        <p>भारत सरकारचा स्वच्छ भारत अभियान</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            "एकता आणि स्वच्छतेच्या माध्यमाने आपण भारताला विश्व शक्ती बनवू शकतो।"
+        </p>
+    </footer>
+</body>
+</html>
